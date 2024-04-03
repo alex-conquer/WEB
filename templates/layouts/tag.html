@@ -1,0 +1,28 @@
+
+<div class="container" style="border: 2px solid black; margin-bottom: 15px;">
+  <div class="row">
+      <div class="col-3 p-2">
+          <div class="border w-100 mb-3" style="height: 150px">
+              <img src="img.jpg" class="img-fluid rounded-start" alt="...">
+          </div>
+          <input type="number" value="5" class="form-control" style="width: 50px;"/>
+      </div>
+      <div class="col-8 p-2">
+          <div class="container">
+              <div style="text-align: center; width: 350px;">
+                  <h3>{{ question.title }}</h3>
+                  <p>{{ question.text }}</p>
+                  <div class="row" style="margin-top: 5px;">
+                      <a class="col-4" href="{% url 'question' question_id=question.id %}">answers (3)</a>
+                      <div class="col-8">
+                          <span><u>Tags</u></span>
+                          {% for tag in question.tags %}
+                          <a href="{% url 'tag' %}"><u>{{ tag }}</u></a>
+                          {% endfor %}
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+</div>
