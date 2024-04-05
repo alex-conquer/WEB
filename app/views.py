@@ -1,7 +1,6 @@
 from django.core.paginator import Paginator
 from django.shortcuts import render
 
-# Create your views here.
 QUESTIONS = [
     {
         "id": i,
@@ -11,10 +10,33 @@ QUESTIONS = [
 ]
 
 def index(request):
+    # Получение номера страницы из запроса (если есть)
     page_num = request.GET.get('page', 1)
+    
+    
+    page_num = int(page_num)
+    
+
+    # Преобразование строки в целое число
+    page_num = int(page_num)
+
+    if page_num < 1:
+        page_num = 1
+    elif page_num > 40:
+        page_num = 30
+
+    # Создание пагинатора и получение объекта страницы
     paginator = Paginator(QUESTIONS, 5)
     page_obj = paginator.page(page_num)
+    
+    # Возвращение шаблона с объектом страницы в контексте
     return render(request, "index.html", {"questions": page_obj})
+
+# def index(request):
+#     page_num = request.GET.get('page', 1)
+#     paginator = Paginator(QUESTIONS, 5)
+#     page_obj = paginator.page(page_num)
+#     return render(request, "index.html", {"questions": page_obj})
 
 
 def hot(request):
