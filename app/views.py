@@ -56,6 +56,9 @@ def ask(request):
 def login(request):
     return render(request, "login.html")
 
+def answer(request):
+    return render(request, "answer.html")
+
 def signup(request):
     return render(request, "signup.html")
 

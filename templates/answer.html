@@ -1,0 +1,50 @@
+{% extends "layouts/base.html" %}
+{% load static %}
+
+{% block content %}
+<main class="container-fluid container-lg mt-3">
+ <div class="d-flex gap-3 align-items-center">
+  <h1 class="px-6 py-6">New Answer</h1>
+</div>
+ <div class="row">
+  <div class="col-8">
+   <div class="container"> 
+    <div class="row mb-2"> 
+      <div class="col-1"> 
+        <label for="input1" class="form-label">Title</label> 
+      </div> 
+      <div class="col-9"> 
+        <input type="text" id="input1" class="form-control" style="border: 3px solid black;" maxlength="100"> 
+      </div> 
+    </div> 
+    <div class="row mb-2"> 
+      <div class="col-1"> 
+        <label for="input2" class="form-label">Text</label> 
+      </div> 
+      <div class="col-9"> 
+        <input 
+          type="text" 
+          id="input2" 
+          class="form-control" 
+          style="height: 250px; border: 3px solid black;" maxlength="500"> 
+      </div> 
+    </div> 
+    <div class="row mb-2"> 
+      <div class="col-1"> 
+        <label for="input3" class="form-label">Tags</label> 
+      </div> 
+      <div class="col-9"> 
+        <input 
+          type="text" 
+          id="input3" 
+          class="form-control" 
+          style="border: 3px solid black;" 
+          maxlength="125">
+      </div> 
+    </div> 
+  </div>
+  <div>
+   <button style="margin-left: 80px; margin-top: 15px; border: 3px solid black;">ASK!</button>
+  </div>
+  </div>
+  {% endblock %}
